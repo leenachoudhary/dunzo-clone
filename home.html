@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Duru+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif, Arial, Helvetica;
+        }
+        
+        * {
+            margin: 0;
+        }
+        
+        .header {
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        #navbar {
+            box-sizing: border-box;
+            display: flex;
+            height: 72px;
+            position: fixed;
+            left: 0px;
+            width: 100%;
+            max-width: 100vw;
+            -webkit-box-align: center;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+            top: 0px;
+            z-index: 11;
+        }
+        
+        #navbar a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+        
+        #logo {
+            box-sizing: content-box;
+            width: 0px;
+            height: 28px;
+            padding: 15px 152px;
+        }
+        
+        #id3 {
+            height: 28px;
+            width: 122px;
+        }
+        
+        #id8 {
+            padding-top: 1105;
+            height: 28px;
+            width: 30px;
+        }
+        
+        #location {
+            padding-left: 2%;
+            padding-top: 0%;
+            box-sizing: content-box;
+            width: 14px;
+            height: 18px;
+        }
+        
+        #id4 {
+            font-family: 'Duru Sans', sans-serif;
+            font-weight: bold;
+            padding-left: 2%;
+            padding-top: 0%;
+            box-sizing: content-box;
+            width: 95px;
+            height: 18px;
+            float: left;
+            display: block;
+            color: #080808;
+            text-align: center;
+            padding: 14px 6px;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        
+        .item {
+            display: flex;
+            padding-top: 12px;
+            padding-left: 0px;
+            font-family: 'Duru Sans', sans-serif;
+        }
+        
+        #navbar ul li {
+            list-style: none;
+            font-size: 0.7rem;
+            float: right;
+            font-weight: bold;
+        }
+        
+        #navbar ul li a:hover {
+            color: black;
+            background-color: white;
+        }
+        
+        #navbar ul li a {
+            color: black;
+            display: block;
+            font-weight: 200px;
+            padding: 0px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+        
+        .two {
+            margin: 0%;
+            width: 100%;
+            height: 10%;
+            background-color: rgb(247, 253, 240);
+            padding-top: 5%;
+            box-sizing: border-box;
+            padding-top: 6%;
+            padding-bottom: 1.5%;
+        }
+        
+        .two ul {
+            display: flex;
+            padding: 1% 9.5%;
+            font-weight: 900px;
+            font-family: 'Duru Sans', sans-serif;
+        }
+        
+        .two ul li {
+            list-style: none;
+            margin: 0%;
+            font-size: 2%;
+            font-weight: bold;
+        }
+        
+        .two ul li a {
+            float: left;
+            font-family: 'Duru Sans', sans-serif;
+            display: block;
+            margin-top: 5%;
+            padding: 0px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            opacity: 1;
+            color: rgb(0, 179, 122);
+            font-size: 12px;
+            line-height: 16px;
+        }
+        
+        .home {
+            height: 90%;
+            margin: 0px auto;
+            box-sizing: border-box;
+            width: 100%;
+            padding-left: 147px;
+            padding-bottom: 40px;
+            padding-right: 14%;
+            background-color: rgb(247, 253, 240);
+        }
+        
+        .home h2 {
+            font-size: 30px;
+            line-height: 44px;
+            margin-bottom: 16px;
+        }
+        
+        .home p {
+            font-size: 14px;
+            color: rgb(111, 117, 136);
+            line-height: 24px;
+            font-family: 'Duru Sans', sans-serif;
+            font-weight: normal;
+        }
+        
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        
+        .sticky+.content {
+            padding-top: 60px;
+        }
+        
+        .services-container {
+            height: 90%;
+            margin: 0px auto;
+            box-sizing: border-box;
+            width: 100%;
+            padding-left: 147px;
+            padding-bottom: 10px;
+            padding-right: 20%;
+            background-color: rgb(247, 253, 240);
+        }
+        
+        #services {
+            margin: 0px;
+            display: flex;
+        }
+        
+        #services .box img {
+            margin: 0px auto;
+            display: block;
+            margin-right: 16px;
+            box-sizing: content-box;
+            width: 244px;
+            border-radius: 8px;
+            height: 180px;
+            cursor: pointer;
+        }
+        
+        #container {
+            box-sizing: border-box;
+            display: flex;
+            flex-flow: row wrap;
+            width: 100%;
+            padding-bottom: 10px;
+            padding-left: 150px;
+            padding-right: 100px;
+            background-color: rgb(247, 253, 240);
+            margin-bottom: 7%;
+        }
+        
+        #container .boxx {
+            padding: 16px;
+            width: 9%;
+            height: 1%;
+            margin-top: 10px;
+            border-radius: 4px;
+            margin-right: 1%;
+            background: white
+        }
+        
+        #container .boxx img {
+            height: 110px;
+            margin-top: 0%;
+            padding-top: 0%;
+            display: block;
+            box-sizing: content-box;
+            width: 40px;
+            height: 40px;
+        }
+        
+        #container .boxx span {
+            margin-left: 0%;
+            font-size: 12px;
+        }
+        
+        #serve {
+            margin: 0px;
+            display: flex;
+            margin-bottom: 15%;
+        }
+        
+        #serve .box img {
+            margin: 0px auto;
+            display: block;
+            margin-right: 16px;
+            box-sizing: content-box;
+            width: 244px;
+            border-radius: 8px;
+            height: 160px;
+            cursor: pointer;
+        }
+        
+        .services-container h2 {
+            margin-bottom: 5%;
+            font-family: 'Duru Sans', sans-serif;
+        }
+        
+        .services-container hr {
+            border: none;
+            height: 4px;
+            width: 100px;
+            color: rgb(0, 179, 122);
+        }
+        
+        #phone {
+            box-sizing: border-box;
+            width: 100%;
+            padding-left: 290px;
+            height: 400%;
+            padding-bottom: 20px;
+            background-color: rgb(247, 253, 240);
+        }
+        
+        #mob {
+            box-sizing: content-box;
+            padding-left: 130px;
+            padding-bottom: 40px;
+            width: 176px;
+            height: 240px;
+        }
+        
+        #goog {
+            box-sizing: content-box;
+            padding-left: 7px;
+            padding-bottom: 35px;
+            padding-right: 18%;
+            width: 15%;
+            height: 6%;
+            margin-bottom: 0%;
+        }
+        
+        #para {
+            font-size: 20px;
+            font-weight: 600px;
+            color: rgb(66, 63, 63);
+            line-height: 3px;
+            padding-left: 3%;
+            padding-bottom: 10%;
+            padding-right: 18%;
+            font-family: 'Duru Sans', sans-serif;
+            font-weight: normal;
+        }
+        
+        #areas table {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 1120px;
+            margin-left: 8%;
+            color: rgb(62, 240, 240);
+            padding: 2rem 0;
+            width: 100%;
+            align-items: center;
+        }
+        
+        #areas h2 {
+            margin: 4rem -2% 0 11%;
+            font-family: 'Duru Sans', sans-serif;
+        }
+        
+        #tab a {
+            font-weight: 500;
+            font-size: 16px;
+            color: rgb(111, 117, 136);
+            padding: 8px 40px;
+            text-decoration: none;
+            font-family: 'Duru Sans', sans-serif;
+        }
+        
+        footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #1e2232;
+        }
+        
+        footer section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: 4.5%;
+            margin-top: 5%;
+            max-width: 1120px;
+            color: #fff;
+            padding: 0rem 0;
+            width: 100%;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .details h4 {
+            padding-bottom: 2%;
+        }
+        
+        .details p {
+            font-family: 'Duru Sans', sans-serif;
+            font-size: 12px;
+            padding-right: 10%;
+        }
+        
+        #details table a {
+            font-family: 'Duru Sans', sans-serif;
+            text-decoration: none;
+        }
+        
+        .footer-logo {
+            width: 6%;
+            margin: 1rem auto;
+        }
+        
+        footer section table {
+            width: 80%;
+            padding-top: -20%;
+        }
+        
+        #img {
+            margin-top: 8%;
+            padding-top: 20%;
+            height: 100%;
+            width: 100%;
+        }
+        
+        footer section table a {
+            color: rgba(256, 256, 256, 0.75);
+            font-weight: 300;
+            font-size: 15px;
+            text-decoration: none;
+        }
+        
+        footer section table th {
+            width: 20%;
+            height: 3rem;
+        }
+        
+        footer section table tr {
+            text-align: left;
+            vertical-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar">
+        <div id="logo">
+            <img id="id3" src="logo.png" alt="DUNZO">
+        </div>
+
+        <img id="location" src="location3.png" alt="Location">
+        <a id="id4" href="home.html">Set Location</a>
+
+
+        <ul id="nav">
+            <li class="item"><img id="id8" src="cart.png" alt=""></li>
+
+            <li class="item"><a id="id2" href="home.html">Need delivery Partners?</a></li>
+            <li class=item><a id="id1" href="home.html">Dunzo for Partners</a> </li>
+        </ul>
+    </div>
+
+    <div class="two">
+        <ul>
+            <li class=item1><a id="id5" href="home.html">Home</a> </li>
+            <li style="color: coral;" class="item1"><a href="id6"> -> </a> </li>
+            <li class="item1"><a id="id7" href="home.html">Bangalore</a></li>
+        </ul>
+    </div>
+
+    <div class="home">
+        <h2>Bangalore</h2>
+        <p>Why step out when you can get everything delivered home with the tap of a button? Bangalore’s favourite delivery app gets you Food, Grocery, Medicine, Pet Supplies, Fruits & Vegetables, Meat & Fish, Health & Wellness, Gifts and Send Packages from
+            one end of the city to the other. From your local kirana stores to your favourite brands, grocery shopping to your forgotten charger, we are always on the move for you. Why worry about your chores, when you can get it all Dun!</p>
+    </div>
+
+    <section class="services-container">
+        <div id="services">
+            <div class="box">
+                <img src="image1.png" alt="">
+            </div>
+
+            <div class="box">
+                <img src="image2.png" alt="">
+            </div>
+
+            <div class="box">
+                <img src="image3.jpg" alt="">
+            </div>
+
+            <div class="box">
+                <img src="image4.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <div id="container">
+        <div class="boxx">
+            <img src="logo1.jpg" alt="">
+            <span class="text">Meat and Fish</span>
+        </div>
+
+        <div class="boxx">
+            <img src="logo2.jpg" alt="">
+            <span class="text">Pet Supplies</span>
+
+        </div>
+
+        <div class="boxx">
+            <img src="logo3.png" alt="">
+            <span class="text">Paan Shop</span>
+        </div>
+
+        <div class="boxx">
+            <img src="logo4.jpg" alt="">
+            <span class="text">Gift and lifestyle</span>
+        </div>
+    </div>
+
+    <section class="services-container">
+        <h2>Top picks for you</h2>
+        <hr>
+        <div id="serve">
+            <div class="box">
+                <img src="image5.jpg" alt="">
+            </div>
+
+            <div class="box">
+                <img src="image6.jpg" alt="">
+            </div>
+
+            <div class="box">
+                <img src="image7.jpg" alt="">
+            </div>
+
+            <div class="box">
+                <img src="image8.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <div id="phone">
+        <img id="mob" src="image9.png" alt="mobile">
+        <img id="goog" src="image13.png" alt="goole">
+        <p id="para">All this from the convenience of your phone. Download the Dunzo mobile app.</p>
+    </div>
+
+    <div id="areas">
+        <h2>Areas we deliver to</h2>
+        <table id="tab">
+            <tr>
+                <td>
+                    <a href="#">Akshyak Nagar</a>
+                </td>
+                <td>
+                    <a href="#">Arekere</a>
+                </td>
+                <td>
+                    <a href="#">Swath Nagar</a>
+                </td>
+                <td>
+                    <a href="#">BTM stage1</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">BTM tage 2</a>
+                </td>
+                <td>
+                    <a href="#">Baiyyanahalli</a>
+                </td>
+                <td>
+                    <a href="#">Banashankari Stage 1,3</a>
+                </td>
+                <td>
+                    <a href="#">Banashankari Stage 2</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">Banaswadi</a>
+                </td>
+                <td>
+                    <a href="#">Bannerghatto</a>
+                </td>
+                <td>
+                    <a href="#">Basavangudi</a>
+                </td>
+                <td>
+                    <a href="#">Challagotta</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">Chamrajpet</a>
+                </td>
+                <td>
+                    <a href="#">Chellikere</a>
+                </td>
+                <td>
+                    <a href="#">Cox Town</a>
+                </td>
+                <td>
+                    <a href="#">Chikkalasandra</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">Doddankundi</a>
+                </td>
+                <td>
+                    <a href="#">Domulur, EGL</a>
+                </td>
+                <td>
+                    <a href="#">Dasarahalli</a>
+                </td>
+                <td>
+                    <a href="#">Harlour</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">Hebbal</a>
+                </td>
+                <td>
+                    <a href="#">Hoodi</a>
+                </td>
+                <td>
+                    <a href="#">ITI Layout</a>
+                </td>
+                <td>
+                    <a href="#">KR Puram</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">Jayanagar</a>
+                </td>
+                <td>
+                    <a href="#">KG Halli</a>
+                </td>
+                <td>
+                    <a href="#">Kudlu</a>
+                </td>
+                <td>
+                    <a href="#">Ulsaar</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">Moddankundi</a>
+                </td>
+                <td>
+                    <a href="#">Lomulur, EGL</a>
+                </td>
+                <td>
+                    <a href="#">Masarahalli</a>
+                </td>
+                <td>
+                    <a href="#">RT Nagar</a>
+                </td>
+            </tr>
+        </table>
+
+        <footer>
+            <section>
+                <div class="details">
+                    <h4>You can’t stop time, but you can save it!</h4>
+                    <p>
+                        Living in the city, there is never enough time to shop for groceries, pick-up supplies, grab food and wade through traffic on the way back home. How about we take care of all of the above for you? What if we can give you all that time back? Send packages
+                        across the city and get everything from food, groceries, medicines and pet supplies delivered right to your doorstep. From any store to your door, just make a list and we’ll make it disappear. Just Dunzo It!<br>
+                    </p>
+                    <br>
+
+                    <div class="socials">
+                        <img class="footer-logo" src="footer.png">
+                    </div>
+                    <table>
+                        <tr>
+                            <th>DUNZO</th>
+                            <th>SERVICEABLE CITIES</th>
+                            <th>GET IN TOUCH</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#">About</a>
+                            </td>
+                            <td>
+                                <a href="#">Bangalore</a>
+                            </td>
+                            <td>
+                                <a href="#">Email</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#">Jobs</a>
+                            </td>
+                            <td>
+                                <a href="#">Pune</a>
+                            </td>
+                            <td>
+                                <a href="#">Twitter</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#">Contact</a>
+                            </td>
+                            <td>
+                                <a href="#">Gurgoan</a>
+                            </td>
+                            <td>
+                                <a href="#">Facebook</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#">terms & Conditions</a>
+                            </td>
+                            <td>
+                                <a href="#">hyderabad</a>
+                            </td>
+                            <td>
+                                <a href="#">Instagram</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#">Privacy Policy</a>
+                            </td>
+                            <td>
+                                <a href="#">New Delhi</a>
+                            </td>
+                            <td>
+                                <a href="#">Linkedin</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#">Dunzo for partner</a>
+                            </td>
+                            <td>
+                                <a href="#">Chennai</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#">Dunxo for bussiness</a>
+                            </td>
+                            <td>
+                                <a href="#">Mumbai</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="foot">
+
+
+                    <div class="delivery">
+                        <img id="img" src="delivery.png">
+                    </div>
+
+                </div>
+            </section>
+
+        </footer>
+
+    </div>
+    <script>
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
